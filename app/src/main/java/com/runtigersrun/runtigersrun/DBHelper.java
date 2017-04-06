@@ -45,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TRACK_COLUMNS_TN = "TrackName";
     public static final String TRACK_COLUMNS_TID = "typeID";
 
-    public static final String TD_
+    public static final String TD_TABLES_NAME = "TrackDifficulty"
     public static final String
     public static final String
     public static final String
