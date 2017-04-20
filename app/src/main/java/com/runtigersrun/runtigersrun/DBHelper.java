@@ -1,5 +1,6 @@
 package com.runtigersrun.runtigersrun;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -10,6 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABAS4E_NAME = "RunTigers";
+
     public static final String USER_TABLE_NAME = "User";
     public static final String USER_COLUMNS_ID = "userID";
     public static final String USER_COLUMNS_FN = "FirstName";
@@ -45,20 +47,36 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TRACK_COLUMNS_TN = "TrackName";
     public static final String TRACK_COLUMNS_TID = "typeID";
 
-    public static final String TD_TABLES_NAME = "TrackDifficulty"
-    public static final String
-    public static final String
-    public static final String
-    public static final String
-    public static final String
-    public static final String
+    public static final String TD_TABLES_NAME = "TrackDifficulty";
+    public static final String TD_COLUMNS_TID = "typeID";
+    public static final String TD_COLUMNS_T = "Type";
 
+    public static final String TE_TABLE_NAME = "Track Estimotes";
+    public static final String TE_COLUMNS_ID = "entryID";
+    public static final String TE_COLUMNS_TID = "trackID";
+    public static final String TE_COLUMNS_EID = "estimoteID";
 
+    public static final String E_TABLE_NAME = "Estimotes";
+    public static final String E_COLUMNS_EID = "estimoteID";
+    public static final String E_COLUMNS_EL = "EstimoteLocation";
 
+    public DBHelper(Context context){
+        super(context, DATABAS4E_NAME, null, 1);
+    }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(
+                "create table User " +
+                        "(userID integer primary key, FirstName text,LastName text,Username text,Password text,Email text, AccountCreated text)" +
+                "create table contacts " +
+                        "(id integer primary key, name text,phone text,email text, street text,place text)"
+        );
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 }
